@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тематический контроль знаний</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #mainImage {
+            width: 25%;
+        }
+    </style>
+</head>
+<body>
+    <p>Михно Дмитрий Владимирович</p>
+    <img src="image.jpg" alt="Изображение" id="mainImage">
+    
+    <button id="changeStyleBtn">Сменить стиль</button>
+
+    <div class="registration-container">
+        <form class="registration-form" id="registrationForm">
+            <div class="form-header">
+                <h1>Регистрация</h1>
+            </div>
+            <div class="steps-container">
+                <div class="steps">
+                    <span class="step-1">1</span>
+                    <span class="step">2</span>
+                    <span class="step">3</span>
+                    <span class="step">4</span>
+                    <span class="step">5</span>
+                    <span class="step">6</span>
+                    <span class="step">7</span>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 14px;">Уважаемые пользователи! Поля, отмеченные звёздочками, обязательны для заполнения.</p>
+
+            <label for="surname">* Фамилия</label>
+            <input type="text" id="surname" name="surname" required>
+
+            <label for="name">* Имя</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="patronymic">* Отчество</label>
+            <input type="text" id="patronymic" name="patronymic">
+            <label class="no-patronymic">
+                <input type="checkbox" id="no-patronymic" name="no-patronymic">
+                У меня нет отчества
+            </label>
+
+            <label>* Пол</label>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="male" required> Мужчина</label>
+                <label style="margin-left: 20px;"><input type="radio" name="gender" value="female" required> Женщина</label>
+            </div>
+
+            <label for="birthdate">* Дата рождения</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="captcha">* Введите код с картинки</label>
+            <div class="captcha-container">
+                <img src="captcha.png" alt="Картинка с кодом">
+                <span id="refresh-captcha" onclick="refreshCaptcha()" style="cursor: pointer; text-decoration: underline;">Обновить</span>
+            </div>
+
+            <div class="captcha-container">
+                <input type="text" id="captcha" name="captcha" required>    
+            </div>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+    <div id="validationResult"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

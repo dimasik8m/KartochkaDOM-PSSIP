@@ -1,0 +1,265 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.registration-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header {
+    background-color: #ffebcc;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid #d9534f;
+}
+
+.form-header h1 {
+    color: #d9534f;
+    font-size: 24px;
+    margin: 0;
+}
+
+.steps-container {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center; 
+}
+
+.step {
+    font-size: 18px;
+    color: #000; 
+}
+
+.step-1 {
+    display: inline-block;
+    padding: 12.5px 0;
+    background-color: #ff0707;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    position: relative;
+    text-transform: uppercase;
+    width: 40px;
+}
+
+.step-1::before,
+.step-1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    z-index: 1;
+}
+
+.step-1::before {
+    left: -40px;
+    border-right-color: #ff0707;
+}
+
+.step-1::after {
+    right: -40px;
+    border-left-color: #ff0707;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="text"], input[type="date"], input[type="radio"], input[type="checkbox"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff5e6;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #ffcc80;
+    background-color: #fff2cc;
+}
+
+.gender {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.gender label {
+    margin-right: 20px; 
+}
+
+.gender label:last-child {
+    margin-right: 0; 
+}
+
+.gender label {
+    font-size: 14px;
+    color: #d9534f;
+}
+
+.no-patronymic {
+    margin-bottom: 20px;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.captcha-container input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.captcha-container img {
+    width: 80px; 
+    height: auto; 
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.captcha-container span {
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #337ab7;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.captcha-container span:hover {
+    color: #23527c;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c9302c;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active {
+    background-color: #c9302c;
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width: 600px) {
+    .registration-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .steps {
+        justify-content: center;
+    }
+
+    .step {
+        font-size: 14px;
+        padding: 7px 0;
+        margin: 3px;
+        width: 30px; 
+    }
+
+    .step-1 {
+        font-size: 14px;
+        padding: 7px 0;
+        margin: 3px;
+        width: 30px; 
+    }
+
+    .step-1::before {
+        left: -30px;
+        border-right-color: #FFC107;
+        border-width: 15px;
+    }
+
+    .step-1::after {
+        right: -30px;
+        border-left-color: #FFC107;
+        border-width: 15px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    input[type="text"], input[type="date"], input[type="radio"], input[type="checkbox"] {
+        font-size: 12px;
+    }
+
+    .gender label {
+        margin-right: 10px;
+    }
+
+    .captcha-container img {
+        width: 60px;
+    }
+
+    .captcha-container span {
+        font-size: 12px;
+    }
+
+    button[type="submit"] {
+        font-size: 12px;
+    }
+}
+
+.error {
+    border-color: red !important;
+    background-color: #ffe6e6 !important;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
